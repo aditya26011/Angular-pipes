@@ -2,10 +2,12 @@ import { Pipe, PipeTransform } from "@angular/core";
 import { Student } from "../Models/student";
 
 @Pipe({
-    name:'filter'
+    name:'filter',
+    pure:false// by default pure
 })
 export class FilterPipe implements PipeTransform{
     transform(list: Student[], filterby:string) {
+        console.log("Filter pipe called")
         if(filterby.toLowerCase()==='all'|| filterby===''|| list.length===0){
             return list;
         }else{
