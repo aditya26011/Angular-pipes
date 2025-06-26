@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { StudentService } from './Services/student.service';
+import { PercentagePipe } from './pipes/percentage.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent
+    AdminComponent,
+    PercentagePipe
   ],
   imports: [
     BrowserModule,
