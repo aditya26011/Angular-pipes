@@ -34,8 +34,15 @@ filterText:string='All';
   @ViewChild('editFee') editFee: ElementRef;
 
   ngOnInit(){
-    this.students = this.studentService.students;
+    this.students = this.studentService.filterByGender(this.filterText);
     this.totalMarks = this.studentService.totalMarks;
+  }
+  filterByGender(event:any){
+   let selectedValue= event.target.value
+   this.filterText=selectedValue;
+   this.students = this.studentService.filterByGender(selectedValue);
+
+    console.log()
   }
 
   OnInsertClicked(){
@@ -54,6 +61,8 @@ filterText:string='All';
       this.Fee.nativeElement.value
     );
     this.isInserting = false;
+       this.students = this.studentService.filterByGender(this.filterText);
+
   }
 
   OnEditClicked(stdId: number){
@@ -73,5 +82,6 @@ filterText:string='All';
       student.fee = this.editFee.nativeElement.value;
 
       this.isEditing = false;
+             this.students = this.studentService.filterByGender(this.filterText);
   }
 }
