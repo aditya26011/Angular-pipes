@@ -16,6 +16,7 @@ studentService: StudentService = inject(StudentService);
   students: Student[];
   totalMarks: number;
   
+filterText:string='All';
   //PROPERTIES FOR INSERTING
   @ViewChild('name') Name: ElementRef;
   @ViewChild('gender') Gender: ElementRef;
