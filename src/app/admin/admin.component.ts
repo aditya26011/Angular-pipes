@@ -16,6 +16,11 @@ studentService: StudentService = inject(StudentService);
   students: Student[];
   totalMarks: number;
   
+  totalStudents=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve(this.students.length)
+    },2000)
+  });
 filterText:string='All';
   //PROPERTIES FOR INSERTING
   @ViewChild('name') Name: ElementRef;
